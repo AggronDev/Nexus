@@ -1,5 +1,4 @@
 <?php
-
 	class Endereco{
 
 		private $id;
@@ -77,6 +76,3 @@
 		
 
 	}
-
-
-?>
