@@ -1,78 +1,86 @@
 <?php
-	class Endereco{
 
-		private $id;
-		private $rua;
-		private $numero;
-		private $bairro;
-		private $cidade;
-		private $estado;
-		private $cep;
-		private $complemento;
+class Endereco {
 
-		function getId(){
-			return $this->id;
-		}
-		
-		function setId($id){
-			$this->id = $id;
-		}
+    private $id;
+    private $rua;
+    private $numero;
+    private $bairro;
+    private $cidade;
+    private $estado;
+    private $cep;
+    private $complemento;
 
-		function getRua(){
-			return $this->rua;
-		}
+    function getId() {
+        return $this->id;
+    }
 
-		function setRua($rua){
-			$this->rua = $rua;
-		}
+    function setId($id) {
+        $this->id = $id;
+    }
 
-		function getNumero(){
-			return $this->numero;
-		}
+    function getRua() {
+        return $this->rua;
+    }
 
-		function setNumero($numero){
-			$this->numero = $numero;
-		}
+    function setRua($rua) {
+        $this->rua = $rua;
+    }
 
-		function getBairro(){
-			return $this->bairro;
-		}
+    function getNumero() {
+        return $this->numero;
+    }
 
-		function setBairro($bairro){
-			$this->bairro = $bairro;
-		}
+    function setNumero($numero) {
+        $this->numero = $numero;
+    }
 
-		function getCidade(){
-			return $this->cidade;
-		}
+    function getBairro() {
+        return $this->bairro;
+    }
 
-		function setCidade($cidade){
-			$this->cidade = $cidade;
-		}
+    function setBairro($bairro) {
+        $this->bairro = $bairro;
+    }
 
-		function getEstado(){
-			return $this->estado;
-		}
+    function getCidade() {
+        return $this->cidade;
+    }
 
-		function setEstado($estado){
-			$this->estado = $estado;
-		}
+    function setCidade($cidade) {
+        $this->cidade = $cidade;
+    }
 
-		function getCep(){
-			return $this->cep;
-		}
+    function getEstado() {
+        return $this->estado;
+    }
 
-		function setCep($cep){
-			$this->cep = $cep;
-		}
+    function setEstado($estado) {
+        $this->estado = $estado;
+    }
 
-		function getComplento(){
-			return $this->complemento;
-		}
+    function getCep() {
+        return $this->cep;
+    }
 
-		function setComplemento($complemento){
-			$this->complemento = $complemento;
-		}
-		
+    function setCep($cep) {
+        $this->cep = $cep;
+    }
 
-	}
+    function getComplento() {
+        return $this->complemento;
+    }
+
+    function setComplemento($complemento) {
+        $this->complemento = $complemento;
+    }
+
+    public function __set($name, $value) {
+        $this->$name = $value;
+    }
+
+    public function __get($name) {
+        return $this->$name;
+    }
+
+}
