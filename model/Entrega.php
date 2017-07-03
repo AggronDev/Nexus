@@ -1,5 +1,7 @@
 <?php
 
+require_once './Pedido.php';
+
 class Entrega {
 
     private $id;
@@ -7,6 +9,18 @@ class Entrega {
     private $previsto_para;
     private $pedido_id;
     private $rastreamento;
+
+    public function __construct() {
+        $this->pedido_id = new Pedido();
+    }
+
+    public function __set($name, $value) {
+        $this->$name = $value;
+    }
+
+    public function __get($name) {
+        return $this->$name;
+    }
 
     function getId() {
         return $this->id;
@@ -46,14 +60,6 @@ class Entrega {
 
     function setRastreamento($rastreamento) {
         $this->rastreamento = $rastreamento;
-    }
-
-    public function __set($name, $value) {
-        $this->$name = $value;
-    }
-
-    public function __get($name) {
-        return $this->$name;
     }
 
 }

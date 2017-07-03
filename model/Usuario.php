@@ -11,6 +11,14 @@ class Usuario {
     private $nascimento;
     private $telefone;
 
+    public function __set($name, $value) {
+        $this->$name = $value;
+    }
+
+    public function __get($name) {
+        return $this->$name;
+    }
+
     public function setId($id) {
         $this->id = $id;
     }
@@ -73,14 +81,6 @@ class Usuario {
 
     function setTelefone($telefone) {
         $this->telefone = $telefone;
-    }
-
-    public function __set($name, $value) {
-        $this->$name = $value;
-    }
-
-    public function __get($name) {
-        return $this->$name;
     }
 
 }

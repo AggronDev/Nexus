@@ -11,6 +11,14 @@ class Endereco {
     private $cep;
     private $complemento;
 
+    public function __set($name, $value) {
+        $this->$name = $value;
+    }
+
+    public function __get($name) {
+        return $this->$name;
+    }
+
     function getId() {
         return $this->id;
     }
@@ -73,14 +81,6 @@ class Endereco {
 
     function setComplemento($complemento) {
         $this->complemento = $complemento;
-    }
-
-    public function __set($name, $value) {
-        $this->$name = $value;
-    }
-
-    public function __get($name) {
-        return $this->$name;
     }
 
 }

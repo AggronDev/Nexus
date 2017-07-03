@@ -6,6 +6,14 @@ class Tipo_pagamento {
     private $nome;
     private $ativo;
 
+    public function __set($name, $value) {
+        $this->$name = $value;
+    }
+
+    public function __get($name) {
+        return $this->$name;
+    }
+
     function getId() {
         return $this->id;
     }
@@ -28,14 +36,6 @@ class Tipo_pagamento {
 
     function setAtivo($ativo) {
         $this->ativo = $ativo;
-    }
-
-    public function __set($name, $value) {
-        $this->$name = $value;
-    }
-
-    public function __get($name) {
-        return $this->$name;
     }
 
 }

@@ -54,4 +54,3 @@ if ($pagina) {
 } else {
     require_once("Paginas/home.php");
 }
-?>

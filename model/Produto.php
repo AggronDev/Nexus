@@ -1,5 +1,7 @@
 <?php
 
+require_once './Fabricante.php';
+
 class Produto {
 
     private $id;
@@ -9,6 +11,19 @@ class Produto {
     private $quantidade;
     private $fabricante_id;
     private $categoria_id;
+
+    public function __construct() {
+        $this->fabricante_id = new Fabricante();
+        $this->categoria_id = new Categoria();
+    }
+
+    public function __set($name, $value) {
+        $this->$name = $value;
+    }
+
+    public function __get($name) {
+        return $this->$name;
+    }
 
     function getId() {
         return $this->id;
@@ -64,14 +79,6 @@ class Produto {
 
     function setCategoria_id($categoria_id) {
         $this->categoria_id = $categoria_id;
-    }
-
-    public function __set($name, $value) {
-        $this->$name = $value;
-    }
-
-    public function __get($name) {
-        return $this->$name;
     }
 
 }

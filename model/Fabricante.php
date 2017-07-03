@@ -8,6 +8,14 @@ class Fabricante {
     private $telefone;
     private $cnpj;
 
+    public function __set($name, $value) {
+        $this->$name = $value;
+    }
+
+    public function __get($name) {
+        return $this->$name;
+    }
+
     function getId() {
         return $this->id;
     }
@@ -46,14 +54,6 @@ class Fabricante {
 
     function setCnpj($cnpj) {
         $this->cnpj = $cnpj;
-    }
-
-    public function __set($name, $value) {
-        $this->$name = $value;
-    }
-
-    public function __get($name) {
-        return $this->$name;
     }
 
 }
