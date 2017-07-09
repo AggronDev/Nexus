@@ -1,4 +1,3 @@
-.phar
-.lock
-.bat
+*.phar
+*.lock
 lib
